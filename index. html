@@ -1,1 +1,513 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonPulse™ | Smart Ambient LED Lighting</title>
+    <style>
+        /* ==========================================
+           1. MODERN RESET & LUXURY TEXTURES
+           ========================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #030712;
+            color: #f3f4f6;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==========================================
+           2. PREMIUM GLOWING HEADER
+           ========================================== */
+        header {
+            background-color: rgba(3, 7, 18, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #a855f7;
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+        }
+
+        /* ==========================================
+           3. HERO IMPACT SECTION
+           ========================================== */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.15) 0%, rgba(3, 7, 12, 0) 70%);
+        }
+
+        .promo-badge {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #c084fc;
+            padding: 8px 24px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.03); opacity: 1; box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            line-height: 1.15;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #9ca3af;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            color: #ffffff;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.5);
+            filter: brightness(1.1);
+        }
+
+        /* ==========================================
+           4. PRODUCT VISUAL SHOWCASE
+           ========================================== */
+        .showcase-box {
+            margin-top: 60px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-product-img {
+            width: 100%;
+            max-width: 750px;
+            height: 420px;
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(99, 102, 241, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-product-img::after {
+            content: "📸 Place Your High-Quality Product Image URL Here";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #6366f1;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================
+           5. FUTURISTIC FEATURES GRID
+           ========================================== */
+        .features-section {
+            background-color: #090d16;
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .section-headline {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-headline span {
+            color: #a855f7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1max));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(168, 85, 247, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #9ca3af;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           6. SOCIAL PROOF / REVIEWS
+           ========================================== */
+        .reviews-section {
+            padding: 100px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-box {
+            background: #090d16;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .stars-container {
+            color: #f59e0b;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .customer-name {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .verified-badge {
+            font-size: 12px;
+            color: #10b981;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .review-comment {
+            color: #9ca3af;
+            font-size: 15px;
+        }
+
+        /* ==========================================
+           7. CHECKOUT / HIGH-CONVERTING FORM
+           ========================================== */
+        .checkout-section {
+            padding: 100px 0;
+            background: radial-gradient(circle at 50% 100%, rgba(99, 102, 241, 0.1) 0%, rgba(3, 7, 12, 0) 70%);
+        }
+
+        .checkout-container {
+            max-width: 550px;
+            margin: 0 auto;
+            background: #090d16;
+            padding: 45px 35px;
+            border-radius: 24px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.8);
+        }
+
+        .price-wrapper {
+            text-align: center;
+            margin-bottom: 35px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px dashed rgba(168, 85, 247, 0.3);
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #ef4444;
+            font-size: 18px;
+            margin-right: 12px;
+            font-weight: 500;
+        }
+
+        .discount-price {
+            color: #10b981;
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        .shipping-info {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e5e7eb;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #030712;
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: #a855f7;
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);
+        }
+
+        .submit-order-btn {
+            width: 100%;
+            background: #10b981;
+            color: #ffffff;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .submit-order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* ==========================================
+           8. CLEAN MINIMAL FOOTER
+           ========================================== */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: #4b5563;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            background-color: #030712;
+        }
+
+        /* ==========================================
+           9. RESPONSIVE DESIGNS
+           ========================================== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 38px; }
+            .hero p { font-size: 18px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .main-product-img { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Neon<span>Pulse</span></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="promo-badge">⚡ SPECIAL OFFER: 40% OFF ENDING SOON</div>
+            <h1>Transform Your Space Into A<br><span>Futuristic Gaming Haven</span></h1>
+            <p>Immerse yourself in dynamic, sync-ready smart lighting. Control millions of ambient colors directly from your phone to match your perfect mood.</p>
+            
+            <a href="#checkout" class="cta-button">Claim Your Discount Now</a>
+
+            <div class="showcase-box">
+                <div class="main-product-img"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-headline">Engineered For <span>Perfection</span></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🌈</span>
+                    <h3>RGBIC Technology</h3>
+                    <p>Display multiple rich colors simultaneously on a single strip light for seamless, fluid animated motion effects.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📲</span>
+                    <h3>Smart App Control</h3>
+                    <p>Effortlessly connect via Bluetooth or Wi-Fi to customize schedules, brightness levels, and lighting scenes instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎵</span>
+                    <h3>Audio Sound Sync</h3>
+                    <p>An integrated high-sensitivity mic auto-syncs the lights with your favorite gaming beats, music, or fast FPS action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="section-headline">What The Community Says</h2>
+            <div class="reviews-grid">
+                <div class="review-box">
+                    <div class="stars-container">★★★★★</div>
+                    <div class="customer-name">Alex M.</div>
+                    <div class="verified-badge">✓ Verified Buyer</div>
+                    <p class="review-comment">"Completely upgraded my setup. The reaction speed to game audio is instantaneous. Highly recommend!"</p>
+                </div>
+                <div class="review-box">
+                    <div class="stars-container">★★★★★</div>
+                    <div class="customer-name">David K.</div>
+                    <div class="verified-badge">✓ Verified Buyer</div>
+                    <p class="review-comment">"The build quality is incredible, and the app has so many presets. Perfect for late-night gaming sessions."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section" id="checkout">
+        <div class="container">
+            <h2 class="section-headline">Secure Your Order</h2>
+            
+            <div class="checkout-container">
+                <div class="price-wrapper">
+                    <span class="original-price">$49.99</span>
+                    <span class="discount-price">$29.99</span>
+                    <p class="shipping-info">✈ Free Worldwide Shipping & Tracking Included</p>
+                </div>
+
+                <!-- Future Form or Gateway Integration -->
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="country">Country</label>
+                        <select id="country" required>
+                            <option value="">-- Select Country --</option>
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-order-btn">Proceed To Payment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NeonPulse. All rights reserved. Secure Checkout.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
